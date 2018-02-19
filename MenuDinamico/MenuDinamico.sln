@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Apresentacao", "0 - Apresentacao", "{CA807297-82AA-4A32-AD91-862EA8D577CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meudotnet.MenuDinamico.Mvc", "src\Meudotnet.MenuDinamico.Mvc\Meudotnet.MenuDinamico.Mvc.csproj", "{D927E3E3-8623-4EBA-9715-281DDE1D29DE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D927E3E3-8623-4EBA-9715-281DDE1D29DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D927E3E3-8623-4EBA-9715-281DDE1D29DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D927E3E3-8623-4EBA-9715-281DDE1D29DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D927E3E3-8623-4EBA-9715-281DDE1D29DE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D927E3E3-8623-4EBA-9715-281DDE1D29DE} = {CA807297-82AA-4A32-AD91-862EA8D577CC}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {111BAD7E-7C30-4BC0-B03F-790C93B7234F}
+	EndGlobalSection
+EndGlobal

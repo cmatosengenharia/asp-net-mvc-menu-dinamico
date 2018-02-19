@@ -1,0 +1,11 @@
+﻿@using Meudotnet.MenuDinamico.Mvc.Helpers
+@model IList<Meudotnet.MenuDinamico.Mvc.ViewModels.MenuViewModel>
+<aside class="main-sidebar">
+    <section class="sidebar">
+        <ul class="sidebar-menu tree" data-widget="tree">
+            <li class="header">Menu</li>
+            @Html.Sidebar(Model, Url)
+            <!-- Optionally, you can add icons to the links -->
+        </ul>
+    </section>
+</aside>
