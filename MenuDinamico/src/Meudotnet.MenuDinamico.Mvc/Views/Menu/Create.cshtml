@@ -1,0 +1,93 @@
+﻿@model Meudotnet.MenuDinamico.Mvc.ViewModels.MenuViewModel
+
+@{
+    ViewBag.Title = "Cadastrar Menu";
+}
+
+@section styles
+{
+
+    <link href="~/Content/select2-4.0.5/dist/css/select2.css" rel="stylesheet" />
+    <link href="~/Content/adminlte/css/alt/AdminLTE-select2.css" rel="stylesheet" />
+}
+
+@using (Html.BeginForm("Create", "Menu", FormMethod.Post))
+{
+    <div class="box box-info">
+        <div class="box-header with-border">
+            <h3 class="box-title">Novo Menu</h3>
+        </div>
+        <!-- /.box-header -->
+        <!-- form start -->
+        <form class="form-horizontal">
+            <div class="box-body">
+                <div class="form-group">
+                    @Html.LabelFor(x => x.RootId)
+                    @Html.DropDownListFor(x => x.RootId, new List<SelectListItem>(), new { @class = "form-control" })
+                    
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(x => x.Name)
+                    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+                    
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(x => x.Order)
+                    @Html.TextBoxFor(x => x.Order, new { @class = "form-control", type = "number" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(x => x.Level)
+                    @Html.TextBoxFor(x => x.Level, new { @class = "form-control", type = "number" })
+                </div>
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer">
+                <button type="submit" class="btn btn-info pull-right">
+                    <span class="fa fa-save"></span>
+                </button>
+            </div>
+            <!-- /.box-footer -->
+        </form>
+    </div>
+}
+
+@section scripts 
+{
+    <script src="~/Content/select2-4.0.5/dist/js/select2.js"></script>
+    <script src="~/Content/select2-4.0.5/dist/js/i18n/pt-BR.js"></script>
+    <script>
+        $(function () {
+            $("select").select2({
+                placeholder: "Selecione menu pai",
+                language: "pt-BR",
+                width: "100%",
+                allowClear: true,
+                ajax: {
+                    url: "/Menu/Search",
+                    type: "GET",
+                    delay: 400,
+                    data: function (params) {
+                        var query = {
+                            name: params.term,
+                            page: params.page || 1
+                        }
+                        return query;
+                    },
+                    processResults: function (data, params) {
+                        params.page = params.page || 1;
+                        return {
+                            results: $.map(data.Result,
+                                function (item, index) {
+                                    var k = { id: item.Id, text: item.Name };
+                                    return k;
+                                }),
+                            pagination: {
+                                more: (params.page * 15) < data.Total
+                            }
+                        };
+                    }
+                }
+            });
+        });
+    </script>
+}

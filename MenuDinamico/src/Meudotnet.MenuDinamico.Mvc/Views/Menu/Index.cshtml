@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Menus";
+    var url = (string)ViewBag.Url;
+}
+
+@section styles
+{
+    <link href="~/Content/bootstrap-table/dist/bootstrap-table.css" rel="stylesheet" />
+}
+
+<div class="panel panel-info">
+    <div class="panel-heading clearfix">
+        <div class="pull-right">
+            <a class="btn btn-primary" href="@Url.Action("Create")">
+                <span class="fa fa-plus"></span>
+            </a>
+        </div>
+        <h4 class="panel-title">Menus Cadastrados</h4>
+    </div>
+    <div class="panel-body">
+        @Html.Hidden("Url", url)
+        <table></table>
+    </div>
+</div>
+
+@section scripts
+{
+    <script src="~/Content/bootstrap-table/dist/bootstrap-table.js"></script>
+    <script src="~/Content/bootstrap-table/dist/locale/bootstrap-table-pt-BR.js"></script>
+    <script src="~/Scripts/menu/index.js"></script>
+}
