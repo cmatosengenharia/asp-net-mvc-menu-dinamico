@@ -1,7 +1,6 @@
 ﻿
 @{
     ViewBag.Title = "Menus";
-    var url = (string)ViewBag.Url;
 }
 
 @section styles
@@ -9,17 +8,17 @@
     <link href="~/Content/bootstrap-table/dist/bootstrap-table.css" rel="stylesheet" />
 }
 
-<div class="panel panel-info">
-    <div class="panel-heading clearfix">
+<div class="box box-info">
+    <div class="box-header clearfix text-center">
         <div class="pull-right">
             <a class="btn btn-primary" href="@Url.Action("Create")">
                 <span class="fa fa-plus"></span>
             </a>
         </div>
-        <h4 class="panel-title">Menus Cadastrados</h4>
+        <h4 class="box-title">Menus Cadastrados</h4>
     </div>
-    <div class="panel-body">
-        @Html.Hidden("Url", url)
+    <div class="box-body">
+        @Html.Hidden("Url", Url.Action("Search"))
         <table></table>
     </div>
 </div>

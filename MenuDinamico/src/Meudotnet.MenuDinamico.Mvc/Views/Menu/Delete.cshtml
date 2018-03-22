@@ -1,0 +1,23 @@
+﻿@model Meudotnet.MenuDinamico.Mvc.ViewModels.MenuViewModel
+@{
+    ViewBag.Title = "Delete";
+}
+
+@using (Html.BeginForm("ConfirmDelete", "Menu", FormMethod.Post))
+{
+    <div class="box box-danger">
+        <div class="box-header">
+            <h5 class="box-title">Delete Menu</h5>
+        </div>
+        <div class="box-body">
+            @Html.HiddenFor(x => x.Id)
+            <div class="form-group">
+                @Html.LabelFor(x => x.Name)<br/>
+                @Html.DisplayTextFor(x => x.Name)
+            </div>
+            <button class="btn btn-danger">
+                <span class="fa fa-trash"></span>
+            </button>
+        </div>
+    </div>
+}

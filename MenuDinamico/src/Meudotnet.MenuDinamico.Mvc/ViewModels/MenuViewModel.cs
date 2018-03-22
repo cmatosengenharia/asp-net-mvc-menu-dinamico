@@ -12,6 +12,8 @@ namespace Meudotnet.MenuDinamico.Mvc.ViewModels
         [Display(Name = "Menu Pai")]
         public int? RootId { get; set; }
 
+        public string Root { get; set; }
+
         [Required]
         public string Name { get; set; }
 

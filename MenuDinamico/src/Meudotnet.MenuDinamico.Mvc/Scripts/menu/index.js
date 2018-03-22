@@ -1,8 +1,8 @@
 ﻿function rowActions(value, row, index) {
     return [
         "<div class='pull-right'>",
-        "<a href='#' class='btn btn-sm btn-primary' title='Atualizar Registro'><span class='fa fa-pencil'></span></a>",
-        "<a href='#' class='btn btn-sm btn-danger' title='Excluir Registro'><span class='fa fa-trash'></span></a>",
+        "<a href='/Menu/Edit/"+row.Id+"' class='btn btn-sm btn-primary' title='Atualizar Registro'><span class='fa fa-pencil'></span></a>",
+        "<a href='/Menu/Delete/"+row.Id+"' class='btn btn-sm btn-danger' title='Excluir Registro'><span class='fa fa-trash'></span></a>",
         "</div>"].join("\n");
 };
 $(function () {

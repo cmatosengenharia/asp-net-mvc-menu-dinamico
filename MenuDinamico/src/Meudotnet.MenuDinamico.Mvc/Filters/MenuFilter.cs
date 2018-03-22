@@ -7,5 +7,6 @@
         public string OrderBy { get; set; }
         public string Sort { get; set; }
         public string Name { get; set; }
+        public int? Id { get; set; }    
     }
 }
